@@ -2,9 +2,10 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Clínica - Bem Vindo</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-
+    
   </body>
 </html>
