@@ -4,7 +4,7 @@
 
     private static function abrir(){
         $banco = "m171_clinica_invoked";
-        $local = "localhost";
+        $local = "senacinfo-db";
         $usuario = "inf_m171";
         $senha = "senacrs";
 

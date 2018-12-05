@@ -1,0 +1,17 @@
+html, body {
+	height: 100%;
+	overflow: auto;
+}
+
+nav.navbar-transparente {
+	padding: 15px 0px;
+	background: rgba(0, 0, 0, 1);
+	border: none;
+}
+
+.divisor{
+	width: 1px;
+	height: 16px;
+	background: white;
+	margin: 16px 10px;
+}
