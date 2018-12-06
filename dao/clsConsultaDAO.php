@@ -2,9 +2,10 @@
 
 class ConsultaDAO {
   public static function inserir($consulta){
-    $sql = "INSERT INTO consultas (horario, codCliente ) VALUES "
+    $sql = "INSERT INTO consultas (horario, codCliente, mensagem ) VALUES "
     . " ( '".$consulta->getHorario()."' , "
-    . "    ".$consulta->getCliente()->getId()."  "
+    . "    ".$consulta->getCliente()->getId()." , "
+    . "   '".$consulta->getMensagem()."' "
     . "  ); ";
 
     Conexao::executar( $sql );
@@ -12,8 +13,9 @@ class ConsultaDAO {
 
   public static function editar( $consulta ){
     $sql = "UPDATE consultas SET "
-    . " horario = ".$consulta->getHorario()." , "
-    . " codCategoria =    ".$consulta->getcliente()->getId()."  "
+    . " horario =  ".$consulta->getHorario()." , "
+    . " codCategoria =    ".$consulta->getcliente()->getId()." , "
+    . " mensagem = '".$consulta->getMensagem()."' "
     . " WHERE id = ".$consulta->getId();
 
     Conexao::executar( $sql );
@@ -27,7 +29,7 @@ class ConsultaDAO {
   }
 
   public static function getConsultas(){
-      $sql = " SELECT p.id, p.horario, c.id, c.nome "
+      $sql = " SELECT p.id, p.horario, p.mensagem, c.id, c.nome "
            . " FROM consultas p "
            . " INNER JOIN clientes c "
            . " ON p.codCliente = c.id "
@@ -35,7 +37,7 @@ class ConsultaDAO {
 
       $result = Conexao::consultar($sql);
       $lista = new ArrayObject();
-      while( list( $cod, $hora, $codCli, $nomeCli) = mysqli_fetch_row($result) ){
+      while( list( $cod, $hora, $mensagem, $codCli, $nomeCli) = mysqli_fetch_row($result) ){
           $cliente = new Clietne();
           $cliente->setId( $codCli );
           $cliente->setNome( $nomeCli );
@@ -43,6 +45,7 @@ class ConsultaDAO {
           $consulta = new Consulta();
           $Consulta->setId($cod);
           $consulta->setHorario($hora);
+          $consulta->setMensagem($mensagem);
 
 
           $lista->append($consulta);
@@ -52,7 +55,7 @@ class ConsultaDAO {
   }
 
   public static function getConsultasById($id){
-      $sql = " SELECT p.id, p.horario, c.id, c.nome "
+      $sql = " SELECT p.id, p.horario, p.mensagem, c.id, c.nome "
            . " FROM consultas p "
            . " INNER JOIN clientes c "
            . " ON p.codCliente = c.id "
@@ -60,7 +63,7 @@ class ConsultaDAO {
 
       $result = Conexao::consultar($sql);
       $lista = new ArrayObject();
-      list( $cod, $hora, $codCli, $nomeCli) = mysqli_fetch_row($result){
+      list( $cod, $hora, $mensagem, $codCli, $nomeCli) = mysqli_fetch_row($result){
           $cliente = new Clietne();
           $cliente->setId( $codCli );
           $cliente->setNome( $nomeCli );
@@ -68,6 +71,7 @@ class ConsultaDAO {
           $consulta = new Consulta();
           $Consulta->setId($cod);
           $consulta->setHorario($hora);
+          $consulta->setMensagem($mensagem);
 
 
           $lista->append($consulta);

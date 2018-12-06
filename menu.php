@@ -1,3 +1,9 @@
+<?php
+if (session_status() != PHP_SESSION_ACTIVE) {
+	session_start();
+}
+?>
+
 <link rel="stylesheet" href="style.css">
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,8 +34,17 @@
             <li><a href="">Nossa História</a></li>
             <li><a href="">Consultar</a></li>
             <li class="divisor"></li>
+            <?php
+            	}
+            		echo "Olá, ". $_SESSION['nome'];
+            		echo "<li><a href='sair.php'>Sair</a></li>";
+            	} else {
+          	?>
             <li><a href="cadastro.php">Cadastrar-se</a></li>
             <li><a href="logar.php" role="button" data-toggle="modal" data-target="#login-modal">Entrar</a></li>
+            <?php
+          		}
+          	?>
           </ul>
         </div>
 
@@ -41,14 +56,14 @@
 
 
     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header" align="center">
-      <img class="img-circle" id="img_logo" src="imagens/logoOlho.png">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-      </button>
-    </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header" align="center">
+            <img class="img-circle" id="img_logo" src="imagens/logoOlho.png">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+          </div>
 
             <!-- Begin # DIV Form -->
             <div id="div-forms">
