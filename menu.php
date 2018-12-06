@@ -31,11 +31,11 @@ if (session_status() != PHP_SESSION_ACTIVE) {
         <div class="collapse navbar-collapse" id="barra-navegacao">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="">Sobre a Clínica</a></li>
-            <li><a href="">Nossa História</a></li>
-            <li><a href="">Consultar</a></li>
+            <li><a href="">Nossa Equipe</a></li>
+            <li><a href="consultar.php">Consultar</a></li>
             <li class="divisor"></li>
             <?php
-            	}
+            	if ( isset($_SESSION['logado']) && $_SESSION['logado'] == TRUE ) {
             		echo "Olá, ". $_SESSION['nome'];
             		echo "<li><a href='sair.php'>Sair</a></li>";
             	} else {

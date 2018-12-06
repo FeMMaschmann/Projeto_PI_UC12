@@ -20,5 +20,5 @@
       clienteDAO::inserir($cliente);
       header("Location: ../index.php");
   }
-}
+
 ?>

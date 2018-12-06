@@ -62,22 +62,19 @@ class ConsultaDAO {
            . " WHERE p.id = ".$id;
 
       $result = Conexao::consultar($sql);
-      $lista = new ArrayObject();
-      list( $cod, $hora, $mensagem, $codCli, $nomeCli) = mysqli_fetch_row($result){
-          $cliente = new Clietne();
+
+      list( $cod, $hora, $mensagem, $codCli, $nomeCli) = mysqli_fetch_row($result);
+          $cliente = new Cliente();
           $cliente->setId( $codCli );
           $cliente->setNome( $nomeCli );
 
           $consulta = new Consulta();
-          $Consulta->setId($cod);
+          $consulta->setId($cod);
           $consulta->setHorario($hora);
           $consulta->setMensagem($mensagem);
-
-
-          $lista->append($consulta);
       }
 
-      return $lista;
+      return $consulta;
   }
 
 
