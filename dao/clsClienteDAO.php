@@ -9,9 +9,9 @@ class ClienteDAO{
     . "   '".$cliente->getSexo()."' , "
     . "   '".$cliente->getEmail()."' , "
     . "   '".$cliente->getCpf()."' , "
-    . "   '".$cliente->getAdmin()."' , '"
+    . "   '".$cliente->getAdmin()."' , "
     . "   '".$cliente->getSenha()."' , "
-    . "   '".$cliente->getTelefone()"' "
+    . "   '".$cliente->getTelefone()."' "
     . "  ); ";
 
     Conexao::executar($sql);
@@ -25,7 +25,7 @@ class ClienteDAO{
     . " cpf =        '".$cliente->getCpf()."' , "
     . " admin =      '".$cliente->getAdmin()."' , '"
     . " senha =      '".$cliente->getSenha()."' , "
-    . " telefone =   '".$cliente->getTelefone()"' "
+    . " telefone =   '".$cliente->getTelefone()."' "
     . " WHERE id =   ".$cliente->getId();
 
     Conexao::executar($sql);

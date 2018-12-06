@@ -12,15 +12,12 @@ html, body {
 	color: transparent;
 }
 
-nav.navbar-transparente {
-	padding: 15px 0px;
-	background: rgba(0, 0, 0, 0.8);
-	border: none;
-}
+
 
 nav.navbar-color {
 	padding: 15px 0px;
 	background: rgba(95,158,160, 1);
+	border: none;
 }
 
 nav.navbar-color:hover {
@@ -37,19 +34,19 @@ nav.navbar-color:hover {
 }
 
 .navbar-inverse .navbar-text {
-  color: #9d9d9d;
+  color: rgb(68, 80, 35);
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #9d9d9d;
+  color: rgb(68, 80, 35);
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #fff;
+  color: rgb(68, 80, 35);
   background-color: transparent;
 }
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-  color: #fff;
+  color: rgb(68, 80, 35);
   background-color: #080808;
 }
