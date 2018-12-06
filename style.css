@@ -3,15 +3,53 @@ html, body {
 	overflow: auto;
 }
 
+.img-logo{
+	height: 40px;
+	width: 132px;
+	display: block;
+	background: url('imagens/logo.png') no-repeat;
+	background-size: contain;
+	color: transparent;
+}
+
 nav.navbar-transparente {
 	padding: 15px 0px;
-	background: rgba(0, 0, 0, 1);
+	background: rgba(0, 0, 0, 0.8);
 	border: none;
+}
+
+nav.navbar-color {
+	padding: 15px 0px;
+	background: rgba(95,158,160, 1);
+}
+
+nav.navbar-color:hover {
+	padding: 15px 0px;
+	background: rgba(95,158,160, 1);
+  text
 }
 
 .divisor{
 	width: 1px;
 	height: 16px;
-	background: white;
+	background: rgb(68, 80, 35);
 	margin: 16px 10px;
+}
+
+.navbar-inverse .navbar-text {
+  color: #9d9d9d;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #9d9d9d;
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #080808;
 }
