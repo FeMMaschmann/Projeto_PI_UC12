@@ -47,7 +47,6 @@ class ConsultaDAO {
           $consulta->setHorario($hora);
           $consulta->setMensagem($mensagem);
 
-
           $lista->append($consulta);
       }
 
@@ -72,13 +71,10 @@ class ConsultaDAO {
           $consulta->setId($cod);
           $consulta->setHorario($hora);
           $consulta->setMensagem($mensagem);
+
+          return $consulta;
       }
 
-      return $consulta;
   }
-
-
-}
-
 
  ?>

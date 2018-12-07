@@ -24,7 +24,7 @@
 
       $cliente->setAdmin(0);
 
-      clienteDAO::inserir($cliente);
+      ClienteDAO::inserir($cliente);
       header("Location: ../index.php");
   }
 }

@@ -7,7 +7,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 <link rel="stylesheet" href="style.css">
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<nav class="navbar navbar-fixed-top navbar-inverse navbar-color">
+<nav class="navbar navbar-fixed-top  navbar-color">
       <div class="container">
 
         <!-- header -->
@@ -30,13 +30,13 @@ if (session_status() != PHP_SESSION_ACTIVE) {
         <!-- navbar -->
         <div class="collapse navbar-collapse" id="barra-navegacao">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="">Sobre a Clínica</a></li>
-            <li><a href="">Nossa Equipe</a></li>
+            <li><a href="sobre.php">Sobre a Clínica</a></li>
+            <li><a href="equipe.php">Nossa Equipe</a></li>
             <li><a href="consultar.php">Consultar</a></li>
             <li class="divisor"></li>
             <?php
             	if ( isset($_SESSION['logado']) && $_SESSION['logado'] == TRUE ) {
-            		echo "Olá, ". $_SESSION['nome'];
+            		echo "<li class='not-active'><a>Olá, ". $_SESSION['nome']."</a></li>";
             		echo "<li><a href='sair.php'>Sair</a></li>";
             	} else {
           	?>
@@ -64,34 +64,28 @@ if (session_status() != PHP_SESSION_ACTIVE) {
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             </button>
           </div>
-
-            <!-- Begin # DIV Form -->
-            <div id="div-forms">
-
-                <!-- Begin # Login Form -->
-                <form id="login-form">
-                <div class="modal-body">
-            <div id="div-login-msg">
-                            <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                            <span id="text-login-msg">Digite seu e-mail ou cpf e sua senha.</span>
-                        </div>
-            <input id="login_username" class="form-control" type="text" placeholder="E-mail ou CPF" required>
-            <input id="login_password" class="form-control" type="password" placeholder="Senha" required>
-              </div>
-            <div class="modal-footer">
-                        <div>
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
-                        </div>
-              <div>
-                            <button id="login_register_btn" type="button" class="btn btn-link"><a href="cadastro.php">Register</a></button>
-                        </div>
-            </div>
-                </form>
-                <!-- End # Login Form -->
-
-            </div>
-            <!-- End # DIV Form -->
-
-  </div>
-</div>
-</div>
+          <!-- Begin # DIV Form -->
+          <div>
+            <!-- Begin # Login Form -->
+            <form action="entrar.php" method="POST">
+            	<div class="modal-body">
+            		<div>
+            			<div class="glyphicon glyphicon-chevron-right"></div>
+            			<span>Digite seu e-mail ou cpf e sua senha.</span>
+            		</div>
+            		<input name="txtLogin" class="form-control" type="text" placeholder="E-mail ou CPF" required>
+            		<input name="txtSenha" class="form-control" type="password" placeholder="Senha" required>
+            	</div>
+            	<div class="modal-footer">
+              	<div>
+                	<button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+              	</div>
+              	<div>
+                	<button type="button" class="btn btn-link"><a href="cadastro.php">Register</a></button>
+              	</div>
+            	</div>
+            </form><!-- End # Login Form -->
+          </div><!-- End # DIV Form -->
+  			</div>
+			</div>
+		</div>

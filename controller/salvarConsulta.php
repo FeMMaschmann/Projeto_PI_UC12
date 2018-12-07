@@ -14,11 +14,13 @@
     $cliente = new Cliente();
     $cliente->setId( $_SESSION['idCliente']);
 
-    $cliente->setHorario($data);
-    $cliente->setProblema($problema);
+    $consulta = new Consulta();
+    $consulta->setHorario($data);
+    $consulta->setMensagem($problema);
+    $consulta->setCliente($cliente);
 
-      clienteDAO::inserir($cliente);
-      header("Location: ../index.php");
+    ConsultaDAO::inserir($consulta);
+    header("Location: ../index.php");
   }
 
 ?>

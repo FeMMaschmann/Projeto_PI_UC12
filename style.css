@@ -16,14 +16,13 @@ html, body {
 
 nav.navbar-color {
 	padding: 15px 0px;
-	background: rgba(95,158,160, 1);
+	background: rgba(143, 187, 189, 1);
 	border: none;
 }
 
 nav.navbar-color:hover {
 	padding: 15px 0px;
-	background: rgba(95,158,160, 1);
-  text
+	background: rgba(143, 187, 189, 1);
 }
 
 .divisor{
@@ -33,20 +32,18 @@ nav.navbar-color:hover {
 	margin: 16px 10px;
 }
 
-.navbar-inverse .navbar-text {
+.navbar-color .navbar-nav > li > a {
   color: rgb(68, 80, 35);
 }
-.navbar-inverse .navbar-nav > li > a {
-  color: rgb(68, 80, 35);
-}
-.navbar-inverse .navbar-nav > li > a:hover,
-.navbar-inverse .navbar-nav > li > a:focus {
-  color: rgb(68, 80, 35);
+.navbar-color .navbar-nav > li > a:hover,
+.navbar-color .navbar-nav > li > a:focus {
+  color: rgb(0, 0, 0);
   background-color: transparent;
 }
-.navbar-inverse .navbar-nav > .active > a,
-.navbar-inverse .navbar-nav > .active > a:hover,
-.navbar-inverse .navbar-nav > .active > a:focus {
-  color: rgb(68, 80, 35);
-  background-color: #080808;
+
+.not-active {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: black;
 }
