@@ -30,7 +30,10 @@
     <form action="controller/salvarConsulta.php?inserir" method="POST">
       <br><br><br><br><br><br><br>
       <label>Horario: </label>
-      <input type="date" name="txtData"/><br><br>
+      <select>
+        <option value="0">Selecione...</option>
+      </select><br><br><br>
+      <!-- <input type="datetime-local" name="txtData"/><br><br> -->
       <label>Descreva seu problema:</label><br>
       <textarea cols="100" rows="10" name="txtProblema"></textarea><br><br>
 
