@@ -1,3 +1,8 @@
+<?php
+  include_once 'model/clsHora.php';
+  include_once 'dao/clsHoraDAO.php';
+  include_once 'dao/clsConexao.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -30,10 +35,18 @@
     <form action="controller/salvarConsulta.php?inserir" method="POST">
       <br><br><br><br><br><br><br>
       <label>Horario: </label>
-      <select>
+      <select name="horario">
         <option value="0">Selecione...</option>
+
+        <?php
+          $lista = HoraDAO::getHoras();
+          foreach ($lista as $hora) {
+            echo "<option value='".$hora->getId()."' >".$hora->getHorario()."</option>";
+          }
+        ?>
       </select><br><br><br>
-      <!-- <input type="datetime-local" name="txtData"/><br><br> -->
+      <label>Dia: </label>
+      <input type="date" name="txtData"/><br><br>
       <label>Descreva seu problema:</label><br>
       <textarea cols="100" rows="10" name="txtProblema"></textarea><br><br>
 

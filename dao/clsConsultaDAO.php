@@ -2,10 +2,10 @@
 
 class ConsultaDAO {
   public static function inserir($consulta){
-    $sql = "INSERT INTO consultas (dia, codCliente,codHora, mensagem) VALUES "
+    $sql = "INSERT INTO consultas (dia, codCliente, codHora, mensagem) VALUES "
     . " ( '".$consulta->getDia()."' , "
     . "    ".$consulta->getCliente()->getId()." , "
-    . "    ".$consulta->getHora()->getId()." , "
+    . "    ".$consulta->getHorario()." , "
     . "   '".$consulta->getMensagem()."' "
     . "  ); ";
 
@@ -16,7 +16,7 @@ class ConsultaDAO {
     $sql = "UPDATE consultas SET "
     . " dia =  ".$consulta->getDia()." , "
     . " codCliente =    ".$consulta->getCliente()->getId()." , "
-    . " codHora =    ".$consulta->getHora()->getId()." , "
+    . " codHora =    ".$consulta->getHorario()->getId()." , "
     . " mensagem = '".$consulta->getMensagem()."' "
     . " WHERE id = ".$consulta->getId();
 
@@ -52,7 +52,7 @@ class ConsultaDAO {
           $consulta = new Consulta();
           $consulta->setId($cod);
           $consulta->setCliente($cliente);
-          $consulta->setHora($hora);
+          $consulta->setHorario($hora);
           $consulta->setDia($dia);
           $consulta->setMensagem($mensagem);
 

@@ -3,14 +3,14 @@
    *
    */
   class Consulta {
-    private $id, $dia, $cliente, $mensagem, $hora;
+    private $id, $dia, $cliente, $mensagem, $horario;
 
-    function __construct($id = NULL, $dia = NULL, $cliente = NULL, $mensagem = NULL, $hora = NULL) {
+    function __construct($id = NULL, $dia = NULL, $cliente = NULL, $mensagem = NULL, $horario = NULL) {
         $this->id = $id;
         $this->dia = $dia;
         $this->cliente = $cliente;
         $this->mensagem = $mensagem;
-        $this->hota = $hora;
+        $this->horario = $horario;
     }
 
     function getId() {
@@ -27,8 +27,8 @@
     function getMensagem() {
         return $this->mensagem;
     }
-    function getHora() {
-        return $this->hora;
+    function getHorario() {
+        return $this->horario;
     }
 
     function setId($id) {
@@ -45,8 +45,8 @@
     function setMensagem($mensagem) {
         $this->mensagem = $mensagem;
     }
-    function setHora($hora) {
-        $this->hora = $hora;
+    function setHorario($horario) {
+        $this->horario = $horario;
     }
 
 

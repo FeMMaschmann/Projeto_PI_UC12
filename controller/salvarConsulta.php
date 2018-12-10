@@ -10,14 +10,16 @@
   if ( isset($_REQUEST['inserir']) ) {
     $data = $_POST['txtData'];
     $problema = $_POST['txtProblema'];
+    $horario = $_POST['horario'];
     session_start();
     $cliente = new Cliente();
     $cliente->setId( $_SESSION['idCliente']);
 
     $consulta = new Consulta();
-    $consulta->setHorario($data);
+    $consulta->setDia($data);
     $consulta->setMensagem($problema);
     $consulta->setCliente($cliente);
+    $consulta->setHorario($horario);
 
     ConsultaDAO::inserir($consulta);
     header("Location: ../index.php");
