@@ -65,7 +65,7 @@ class ClienteDAO{
     $sql = "SELECT * FROM clientes WHERE id =".$id;
 
     $result = Conexao::consultar($sql);
-    $lista = new ArrayObject();
+
     list ($id, $nome, $sexo, $email, $cpf, $admin, $senha, $telefone) = mysqli_fetch_row($result);
       $cliente = new Cliente();
       $cliente->setId($id);
@@ -77,10 +77,7 @@ class ClienteDAO{
       $cliente->setSenha($senha);
       $cliente->setTelefone($telefone);
 
-      $lista->append($cliente);
-
-
-    return $lista;
+    return $cliente;
   }
 
   public static function logar($login, $senha){
